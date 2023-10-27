@@ -122,14 +122,4 @@ function generateMarkdown(data) {
   ${renderQuestions(data.github, data.email)}`;
 }
 
-function generateMarkdown(data){
-return `
-
-# ${data.title}
-
-## Description
-${data.description}
-
-${renderLicense(data.license)}
-`
-}
+module.exports=generateMarkdown;

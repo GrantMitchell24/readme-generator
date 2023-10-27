@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./generateMakrdown2.js')
+const generateMarkdown = require('./generateMakrdown.js')
 
 const questions = [
   {
@@ -8,6 +8,19 @@ const questions = [
     message: 'Enter project title: ',
     name: 'title'
   },
+  {
+    type: 'list',
+    message: 'Select a license:',
+    name: 'license',
+    choices: [
+    {
+      name: 'BSD'
+      value: {
+        link: '[BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause)',
+        badge: '[![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]
+        (https://opensource.org/licenses/BSD-3-Clause)'
+      }
+    },
   {
     type: 'input',
     message: 'Enter a description of the project:',
@@ -53,10 +66,11 @@ function writeToFile(fileName, data) {
 
 function init() {
   console.log("Please answer the following questions to generate a beautiful README.md file. Please leave unneeded sections blank")
-  inquirer.createPromptModule(questions).then(answers => {
+  inquirer.prompt(questions).then(answers => {
     let info = generateMarkdown(answers);
     writeToFile("./new_readme/README.md", info)
-    console.log('Your README file has been made. It can be found in the "new_readme" folder and is labeled "README.md".')
+    console.log('Your README file has been made. Please see the "new_readme" in the folder labeled "README.md".')
   })
-
 }
+
+init();
