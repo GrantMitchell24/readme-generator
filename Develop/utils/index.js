@@ -87,7 +87,7 @@ function init() {
   console.log("Please answer the following questions to generate a beautiful README.md file. Please leave unneeded sections blank")
   inquirer.prompt(questions).then(answers => {
     let info = generateMarkdown(answers);
-    writeToFile("./new_readme/README.md", info)
+    writeToFile("./new_readme.MD", info)
     console.log('Your README file has been made. Please see the "new_readme" in the folder labeled "README.md".')
   })
 }
