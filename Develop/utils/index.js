@@ -14,13 +14,32 @@ const questions = [
     name: 'license',
     choices: [
     {
-      name: 'BSD'
+      name: 'BSD',
       value: {
         link: '[BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause)',
-        badge: '[![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]
-        (https://opensource.org/licenses/BSD-3-Clause)'
+        badge: '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
       }
     },
+    {
+      name: 'MIT',
+      value: {
+        link: '[The MIT License](https://opensource.org/licenses/MIT)',
+        badge: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+      }
+    },
+    {
+      name: 'Perl',
+      value: {
+        link: '[The Perl License](https://opensource.org/licenses/Artistic-2.0)',
+        badge: '[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)'
+      }
+    },
+    {
+      name: 'None',
+      value: 'none'
+    },
+  ]
+},
   {
     type: 'input',
     message: 'Enter a description of the project:',
